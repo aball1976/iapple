@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gra w cyfry</title>
+</head>
+<body>
+  <h1>Gra w cyfry</h1>
+  <input type="text" id="digit1" maxlength="1" size="1">
+  <input type="text" id="digit2" maxlength="1" size="1">
+  <input type="text" id="digit3" maxlength="1" size="1">
+  <input type="text" id="digit4" maxlength="1" size="1">
+  <button onclick="sendDigits()">Wyślij</button>
+
+  <script>
+    function sendDigits() {
+      var digit1 = document.getElementById("digit1").value;
+      var digit2 = document.getElementById("digit2").value;
+      var digit3 = document.getElementById("digit3").value;
+      var digit4 = document.getElementById("digit4").value;
+      
+      var email = "aball@tt.com.pl";
+      var subject = "Wprowadzone cyfry";
+      var body = "Wprowadzone cyfry: " + digit1 + digit2 + digit3 + digit4;
+      
+      var mailtoUrl = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      window.location.href = mailtoUrl;
+      
+      alert("Dziękujemy");
+    }
+  </script>
+</body>
+</html>
